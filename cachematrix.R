@@ -4,7 +4,7 @@
 
 ## Creates a matrix object that can cache itself
 ## Creates list of functions that can be called externally
-makeCacheMatrix <- function(x = matrix()) {     
+makeCacheMatrix <- function(x = matrix()) {     ## defines a matrix, x
         i <- NULL                               ## initialization
         set <- function(y) {                    ## stores matrix in cache
                 x <<- y                         
@@ -26,7 +26,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Calculates inverse if no cached inverse exists or matrix has been changed
 ## Returns inverse matrix (either cached or calculated)
 cacheSolve <- function(x, ...) {
-        i <- x$getinv()                         ## returns a matrix that is the inverse of "x"
+        i <- x$getinv()                         ## returns a matrix that is the inverse of x
         if(!is.null(i)) {                       ## checks if inverse is in cache + prints message
                 message("getting cached inverse matrix")
                 return(i)                       ## returns cached inverse (without computation)
